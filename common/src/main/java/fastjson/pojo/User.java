@@ -4,7 +4,6 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
 public class User {
-
     /**
      * 不序列化该字段
      */

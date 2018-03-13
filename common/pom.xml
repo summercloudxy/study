@@ -15,7 +15,13 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.46</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+        <!--ftp-->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.6</version>
+        </dependency>
     </dependencies>
     
 </project>
