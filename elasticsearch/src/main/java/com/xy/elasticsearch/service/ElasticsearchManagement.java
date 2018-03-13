@@ -19,12 +19,14 @@ public class ElasticsearchManagement {
                     //好处是不用手动设置集群里所有机器的IP到连接客户端，会自动添加，并且自动发现新加入集群的机器
                     .put("client.transport.sniff", true)
                     //如果集群名称不是“Elasticsearch”，必须设置集群名称
-                    .put("cluster.name", "secilog")
+//                    .put("cluster.name", "secilog")
                     .build();
-            client = new PreBuiltTransportClient(settings).addTransportAddress(
+            client = new PreBuiltTransportClient(Settings.EMPTY).addTransportAddress(
                     //可以连接一个集群中的多个节点
-                    new TransportAddress(InetAddress.getByName("192.168.9.181"), 9200));
+                    new TransportAddress(InetAddress.getByName("192.168.9.181"), 9300));
         }catch (Exception e){
+            e.printStackTrace();
+        }finally {
             if (client != null){
                 client.close();
             }
