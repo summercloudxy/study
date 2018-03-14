@@ -35,25 +35,35 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 		<dependency>
-			<groupId>org.elasticsearch</groupId>
-			<artifactId>elasticsearch</artifactId>
-			<version>6.2.2</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.0.0.RELEASE</version>
 		</dependency>
 
+		<!--注意这里其实只添加transport依赖 即可，该依赖包含了org.elasticsearch.elasticsearch和org.elasticsearch.plugin.transport-netty4-client-->
+		<!--但是不知道为什么maven直接下载来的这两个包的版本为5.6.8，实际需要依赖的版本应该为6.2.2，因此再单独添加这两个依赖以下载正确的版本-->
 		<!-- https://mvnrepository.com/artifact/org.elasticsearch.client/transport -->
 		<dependency>
 			<groupId>org.elasticsearch.client</groupId>
 			<artifactId>transport</artifactId>
 			<version>6.2.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+		<!--其实org.elasticsearch.client.transport中是包含该依赖的，并不需要在pom中单独添加该依赖也会下载相应的jar包-->
+		<!--但是maven下载的并不是依赖需要的6.2.2版本（原因不明），因此手动添加6.2.2版本的依赖-->
+		 <!--https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch-->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.0.0.RELEASE</version>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>6.2.2</version>
+		</dependency>
+		<!--同org.elasticsearch.elasticsearch-->
+		<!-- https://mvnrepository.com/artifact/org.elasticsearch.plugin/transport-netty4-client -->
+		<dependency>
+			<groupId>org.elasticsearch.plugin</groupId>
+			<artifactId>transport-netty4-client</artifactId>
+			<version>6.2.2</version>
 		</dependency>
 
 

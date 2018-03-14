@@ -13,7 +13,9 @@
         <module>../elasticsearch</module>
         <module>../mongodb</module>
         <module>../common</module>
+        <module>../mybatis</module>
     </modules>
+
 
     <!--<repositories>-->
         <!--&lt;!&ndash;<repository>&ndash;&gt;-->
