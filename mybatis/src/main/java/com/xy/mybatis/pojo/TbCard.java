@@ -1,4 +1,4 @@
-package pojo;
+package com.xy.mybatis.pojo;
 
 public class TbCard {
     /**

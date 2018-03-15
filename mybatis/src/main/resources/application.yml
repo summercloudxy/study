@@ -1,0 +1,34 @@
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/smartfactory2?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
+#    username: smartfactory
+#    password: smartfactory123
+#    type: com.alibaba.druid.pool.DruidDataSource
+
+
+
+# application.yml
+logging:
+  level:
+    druid.sql.Statement: debug
+## 以下功能由 [druid-spring-boot-starter](https://github.com/drtrang/druid-spring-boot) 提供
+spring:
+ datasource:
+  druid:
+    url: jdbc:mysql://localhost:3306/smartfactory2?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
+    username: smartfactory
+    password: smartfactory123
+    filter:
+      slf4j:
+        enabled: true
+        statement-executable-sql-log-enable: true
+        statement-create-after-log-enabled: false
+        statement-parameter-set-log-enabled: false
+        statement-execute-after-log-enabled: false
+        statement-parameter-clear-log-enable: false
+        statement-close-after-log-enabled: false

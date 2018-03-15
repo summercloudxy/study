@@ -32,7 +32,7 @@
         <!-- 实体类生成的位置 -->
         <!--<javaModelGenerator targetPackage="目标包" targetProject="目标项目classpath">-->
         <!--src/main/java被标红，并没有错误，无视-->
-        <javaModelGenerator targetPackage="pojo" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.xy.mybatis.pojo" targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
             <!-- 从数据库返回的值被清理前后的空格 -->
@@ -41,18 +41,18 @@
 
         <!-- *Mapper.xml 文件的位置 -->
         <!--<sqlMapGenerator targetPackage="目标包" targetProject="目标项目classpath">-->
-        <sqlMapGenerator targetPackage="dao" targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="com.xy.mybatis.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!-- Mapper 接口文件的位置 -->
         <!--<javaClientGenerator targetPackage="目标包" targetProject="目标项目classpath" type="XMLMAPPER">-->
-        <javaClientGenerator targetPackage="dao" targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.xy.mybatis.dao" targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
         <!-- 相关表的配置 -->
-        <table tableName="tb_card" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="tb_card" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                enableUpdateByExample="true"/>
     </context>
 </generatorConfiguration>
