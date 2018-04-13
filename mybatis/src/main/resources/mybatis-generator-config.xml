@@ -5,7 +5,7 @@
 <generatorConfiguration>
 
     <!-- 本地数据库驱动程序jar包的全路径 -->
-    <classPathEntry location="C:/Users/xiayun/.m2/repository/mysql/mysql-connector-java/6.0.5/mysql-connector-java-6.0.5.jar"/>
+    <classPathEntry location="C:/Users/xiayun/.m2/repository/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar"/>
 
     <context id="context" targetRuntime="MyBatis3">
         <commentGenerator>
@@ -20,9 +20,9 @@
         <!--或者 Could not create connection to database server.  -->
         <!--url需要添加serverTimezone=Asia/Shanghai&ndash;&gt;&ndash;&gt;-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.9.198:3306/smartfactory2?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;failOverReadOnly=false&amp;serverTimezone=Asia/Shanghai&amp;nullNamePatternMatchesAll=true"
+                        connectionURL="jdbc:mysql://192.168.5.34:3306/test?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;useSSL=true"
                         userId="root"
-                        password="root"/>
+                        password="123456"/>
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
                  NUMERIC 类型解析为java.math.BigDecimal -->
         <javaTypeResolver>
@@ -52,7 +52,7 @@
         </javaClientGenerator>
 
         <!-- 相关表的配置 -->
-        <table tableName="tb_card" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+        <table tableName="tb_workshop_post" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
                enableUpdateByExample="true"/>
     </context>
 </generatorConfiguration>

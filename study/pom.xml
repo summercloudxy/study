@@ -14,21 +14,26 @@
         <module>../mongodb</module>
         <module>../common</module>
         <module>../mybatis</module>
+        <module>../springbootdemo</module>
     </modules>
 
 
-    <!--<repositories>-->
-        <!--&lt;!&ndash;<repository>&ndash;&gt;-->
-            <!--&lt;!&ndash;<id>alimaven</id>&ndash;&gt;-->
-            <!--&lt;!&ndash;<name>aliyun maven</name>&ndash;&gt;-->
-            <!--&lt;!&ndash;<url>http://maven.aliyun.com/nexus/content/groups/public/</url>&ndash;&gt;-->
-        <!--&lt;!&ndash;</repository>&ndash;&gt;-->
+    <build>
+        <plugins>
 
-        <!--&lt;!&ndash;<repository>&ndash;&gt;-->
-        <!--&lt;!&ndash;<id>oss-sonatype</id>&ndash;&gt;-->
-        <!--&lt;!&ndash;<name>oss-sonatype</name>&ndash;&gt;-->
-        <!--&lt;!&ndash;<url>https://oss.sonatype.org/content/repositories/snapshots/</url>&ndash;&gt;-->
-        <!--&lt;!&ndash;</repository>&ndash;&gt;-->
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
 
-    <!--</repositories>-->
+        <repository>
+            <id>oss-sonatype</id>
+            <name>oss-sonatype</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
 </project>
