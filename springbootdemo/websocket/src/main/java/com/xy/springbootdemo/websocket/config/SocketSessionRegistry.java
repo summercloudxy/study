@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import java.util.Collections;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -70,6 +71,20 @@ public class SocketSessionRegistry {
                 this.userSessionIds.remove(userName);
             }
 
+        }
+    }
+
+    public void unregisterSessionId(String sessionId) {
+        Assert.notNull(sessionId, "Session ID must not be null");
+        Object var3 = this.lock;
+        synchronized (this.lock) {
+            for (Map.Entry<String, Set<String>> entry : userSessionIds.entrySet()) {
+                Set<String> set = entry.getValue();
+                String user = entry.getKey();
+                if (set.contains(sessionId) && set.remove(sessionId) && set.isEmpty()) {
+                    this.userSessionIds.remove(user);
+                }
+            }
         }
     }
 }
