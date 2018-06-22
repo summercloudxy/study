@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.FileInputStream;
 
 @Controller
-public class downloadFileController {
+public class DownloadFileController {
 
     @RequestMapping("/download/excel")
     public ResponseEntity downloadOne(HttpServletRequest request, HttpServletResponse response) throws Exception {
