@@ -24,7 +24,7 @@ public class MyBlockingQueue {
         }
 
         queue.add(content);
-        this.notify();
+        this.notifyAll();
     }
 
 
@@ -37,7 +37,7 @@ public class MyBlockingQueue {
             }
         }
         String poll = queue.poll();
-        this.notify();
+        this.notifyAll();
         return poll;
     }
 }

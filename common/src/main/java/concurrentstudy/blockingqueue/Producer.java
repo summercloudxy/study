@@ -13,12 +13,13 @@ public class Producer {
             for (int i = 0; i < 100; i++) {
                 myBlockingQueue.put("" + i);
                 System.out.println("生产者生产：" + i);
+                try {
+                    Thread.sleep((int) (Math.random() * 1000));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-            try {
-                Thread.sleep((int) Math.random() * 100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
         });
 
         thread.start();

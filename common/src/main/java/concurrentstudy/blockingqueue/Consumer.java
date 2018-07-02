@@ -16,7 +16,7 @@ public class Consumer {
                 String take = myBlockingQueue.take();
                 System.out.println("消费者消费：" + take);
                 try {
-                    Thread.sleep((int)Math.random()*100);
+                    Thread.sleep((int)(Math.random()*1000));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
